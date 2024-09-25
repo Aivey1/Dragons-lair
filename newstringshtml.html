@@ -1,0 +1,42 @@
+<!-- Alverse Ivey -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Message Page</title>
+    <link rel="stylesheet" href="styles.css"> <!-- This connects to the file for the page's look -->
+</head>
+<body>
+
+    <h1>Welcome to the Secret Message Page!</h1> <!-- Main title of the page -->
+
+    <!-- Form for users to enter their information -->
+    <form id="userForm" onsubmit="return validateForm()"> <!-- Starts checking inputs when submitted -->
+        <!-- Box for the user's first name -->
+        <label for="firstName">First Name:</label> <!-- Label for the input box -->
+        <input type="text" id="firstName" required> <!-- Where the user types their first name -->
+        <br><br>
+
+        <!-- Box for the user's last name -->
+        <label for="lastName">Last Name:</label> <!-- Label for the input box -->
+        <input type="text" id="lastName" required> <!-- Where the user types their last name -->
+        <br><br>
+
+        <!-- Box for the user's zip code -->
+        <label for="zipCode">Zip Code:</label> <!-- Label for the input box -->
+        <input type="text" id="zipCode" maxlength="5" value="30344" required> <!-- Where the user types their zip code -->
+        <br><br>
+
+        <!-- Button to send the information -->
+        <input type="submit" value="Submit"> <!-- Button to submit the form -->
+    </form>
+
+    <!-- Area to show the secret message -->
+    <div id="secretMessage" style="display: none;"> <!-- Starts off hidden -->
+        <h2>Your Secret Message: Congratulations! You have unlocked the message.</h2> <!-- This is the message shown when valid -->
+    </div>
+
+    <script src="script.js"></script> <!-- This connects to the script that checks inputs -->
+</body>
+</html>

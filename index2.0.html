@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move the Meme</title>
+   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0fe; /* Light background color */
+        }
+        h1 {
+            color: #333333; /* Dark text color for the header */
+        }
+        #memeImage {
+            position: relative; /* Positioning for movement */
+            left: 0px; /* Initial left position */
+            transition: left 0.5s; /* Smooth movement */
+            width: 300px; /* Set width for the meme image */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px; /* Button styling */
+        }
+    </style>
+</head>
+<body>
+    <h1>Move the Meme</h1>
+   
+    <!-- Meme image that will move across the page -->
+    <img id="memeImage" src="1727540269953blob.jpg.png" alt="Meme Image">
+
+    <!-- Buttons to start and stop the image movement -->
+    <button id="startBtn" onclick="startMoving()">Start</button>
+    <button id="stopBtn" onclick="stopMoving()" disabled>Stop</button>
+
+    <script>
+        let interval; // Variable to hold the interval ID
+        let memeImage = document.getElementById('memeImage'); // Get the meme image element
+
+        // Function to start moving the meme image
+        function startMoving() {
+            let leftPosition = parseInt(memeImage.style.left, 10) || 0; // Get current left position
+            interval = setInterval(() => {
+                leftPosition += 5; // Move the image to the right by 5 pixels
+                memeImage.style.left = leftPosition + 'px'; // Update the left position
+            }, 100); // Move every 100 milliseconds
+
+            // Disable the Start button and enable the Stop button
+            document.getElementById('startBtn').disabled = true;
+            document.getElementById('stopBtn').disabled = false;
+        }
+
+        // Function to stop moving the meme image
+        function stopMoving() {
+            clearInterval(interval); // Stop the movement
+
+            // Enable the Start button and disable the Stop button
+            document.getElementById('startBtn').disabled = false;
+            document.getElementById('stopBtn').disabled = true;
+        }
+    </script>
+</body>
+</html>

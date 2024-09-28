@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Movement</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Move the Meme</h1>
+    <img id="memeImage" src="meme.png" alt="Meme Image" style="position: relative; left: 0px;">
+    <button id="startBtn" onclick="startMoving()">Start</button>
+    <button id="stopBtn" onclick="stopMoving()" disabled>Stop</button>
+    <script src="script.js"></script>
+</body>
+</html>
+

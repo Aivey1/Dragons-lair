@@ -1,0 +1,51 @@
+# Jungle Adventure Simulation
+
+def start_game():
+    # First decision: Choosing your path
+    print("Welcome to the Jungle Adventure!")
+    print("You are on an expedition deep in the jungle. Choose your path.")
+    print("1. Go left into the dense forest.")
+    print("2. Go right toward the river.")
+    path = input("Enter 1 or 2: ")
+
+    # Second decision based on the first choice
+    if path == "1":
+        print("You went into the dense forest and encountered a wild animal!")
+        print("What will you do?")
+        print("1. Climb a tree.")
+        print("2. Run away.")
+        action = input("Enter 1 or 2: ")
+
+        if action == "1":
+            # Third decision
+            print("You climbed the tree and found a hidden treasure!")
+        elif action == "2":
+            print("You ran away but got lost in the jungle.")
+        else:
+            print("Invalid choice. Game over.")
+
+    elif path == "2":
+        print("You followed the river and found a boat.")
+        print("What will you do?")
+        print("1. Sail down the river.")
+        print("2. Stay on the shore.")
+        action = input("Enter 1 or 2: ")
+
+        if action == "1":
+            # Third decision
+            print("You sailed down the river and escaped the jungle safely!")
+        elif action == "2":
+            print("You stayed on the shore and got attacked by crocodiles.")
+        else:
+            print("Invalid choice. Game over.")
+
+    else:
+        print("Invalid choice. Game over.")
+
+# Main loop to allow replaying the game
+while True:
+    start_game()  # Start the game
+    replay = input("Do you want to play again? (yes/no): ").lower()  # Ask to play again
+    if replay != "yes":  # If the player doesn't want to play again
+        print("Thanks for playing! Goodbye!")
+        break  # Exit the loop and end the game
